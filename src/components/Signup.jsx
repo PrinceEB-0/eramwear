@@ -63,61 +63,74 @@ const submit = async(e)=>{
 }
 
   return (
-    <div className='row justify-content-center mt-4'>
-      <div className='col-md-6 card shadow p-4'>
-        <h2>Signup</h2>
-        <form onSubmit={submit}>
+  <div className="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+    <div className="card shadow-lg p-5 rounded-4" style={{ maxWidth: "500px", width: "100%" }}>
+      <h2 className="text-center mb-4 text-primary">Create Your Account</h2>
 
-          {loading}
-          {success}
-          {error}
+      <form onSubmit={submit}>
+        {loading && <div className="alert alert-info">Loading...</div>}
+        {success && <div className="alert alert-success">{success}</div>}
+        {error && <div className="alert alert-danger">{error}</div>}
 
-          <input 
-          type="text" 
-          placeholder='Enter the username' 
-          className='form-control' 
-          value={username}
-          onChange={(e) => { setUsername(e.target.value); }}
-          required/>
-        </form> <br />
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
 
-        {username}
+        <div className="mb-3">
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
 
-        <form>
-          <input type="email" 
-          placeholder='Enter Email Address'
-          className='form-control'
-          value={email}
-          onChange={(e) => { setEmail(e.target.value); }}
-          required/> <br />
-        
-        {email}
+        <div className="mb-3">
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
 
-          <input type="password" 
-          placeholder='Enter your password'
-          className='form-control'
-          value={password}
-          onChange={(e) => { setPassword(e.target.value); }}
-          required/> <br />
+        <div className="mb-4">
+          <input
+            type="tel"
+            className="form-control"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+        </div>
 
-        {password}
+        <div className="d-grid">
+          <button type="submit" className="btn btn-primary btn-lg rounded-pill">
+            Sign Up
+          </button>
+        </div>
+      </form>
 
-          <input type="number" 
-          placeholder='Enter the phone number'
-          className='form-control'
-          value={phone}
-          onChange={(e) => {setPhone(e.target.value);}}
-          required/> <br />
-
-        {phone} <br />
-
-          <button type='submit' className='btn btn-primary'>Signup</button>
-        </form>
-
-        <p>Already have an account?</p> <Link to={"/signin"}>Signin</Link>
+      <div className="text-center mt-4">
+        <p className="mb-0">Already have an account?</p>
+        <Link to="/signin" className="text-decoration-none text-primary fw-semibold">Sign In</Link>
       </div>
     </div>
-  )
+  </div>
+);
+
 }
 
 export default Signup

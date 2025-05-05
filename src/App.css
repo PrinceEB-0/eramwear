@@ -11,6 +11,7 @@
   height: 40vmin;
   pointer-events: none;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -45,108 +46,5 @@
 
 /* Footer Background */
 .footer-background {
-  background: linear-gradient(to right, #0d47a1, #1976d2, #42a5f5);
-  padding: 30px 20px;
-  color: white;
-}
-.bottom-footer {
-  background-color: #0d47a1;
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-}
-.footer-background h5 {
-  color: #ffcc00;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.footer-background p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #f0f0f0;
-}
-
-/* Social Media Icons */
-.social-pictures {
-  height: 50px;
-  width: 50px;
-  margin-right: 10px;
-  border-radius: 50%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #ffcc00;
-}
-.social-pictures:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 4px 10px rgba(255, 204, 0, 0.6);
-}
-
-/* Input Fields */
-.form-control {
-  border-radius: 10px;
-  border: 2px solid #ccc;
-  padding: 12px;
-  font-size: 15px;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-.form-control:focus {
-  border-color: #ffcc00;
-  box-shadow: 0px 0px 8px rgba(255, 204, 0, 0.7);
-}
-
-/* Buttons */
-.btn-primary {
-  background-color: #ffcc00;
-  color: #0d47a1;
-  font-weight: bold;
-  border-radius: 30px;
-  padding: 10px 25px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.btn-primary:hover {
-  background-color: #ffd54f;
-  color: #003366;
-}
-.btn-outline-dark {
-  border-radius: 30px;
-  padding: 10px 25px;
-  transition: all 0.3s ease-in-out;
-}
-.btn-outline-dark:hover {
-  background-color: #0d47a1;
-  color: white;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .footer-background {
-    text-align: center;
-  }
-
-  .social-pictures {
-    margin: 5px;
-  }
-
-  .form-control {
-    width: 100%;
-  }
-
-  .navbar-brand {
-    font-size: 1.5rem;
-  }
-}
-
-/* Links */
-.App-link {
-  color: #61dafb;
-}
-
-/* Logo Animation */
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background: linear-gradient
 }
