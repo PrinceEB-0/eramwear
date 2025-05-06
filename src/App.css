@@ -84,10 +84,12 @@ footer .bottom-footer {
 
 /* Social Icons */
 .social-pictures {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   transition: transform 0.3s ease-in-out;
   margin: 0 10px;
+  object-fit: cover;
+  border-radius: 50%; /* Round frame around images */
 }
 
 .social-pictures:hover {
@@ -133,14 +135,15 @@ button.btn-primary:hover, input[type="submit"]:hover {
   }
 
   .social-pictures {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
   }
 
   footer {
     font-size: 0.8rem;
   }
 }
+
 .whitish-gradient {
   background: linear-gradient(135deg, #ffffff, #f2f2f2);
   color: #333; /* Dark text for contrast */
