@@ -10,6 +10,7 @@ import Addproducts from './components/Addproducts';
 import Signin from './components/Signin';
 import Aboutus from './components/Aboutus';
 import Chatbot from './components/Chatbot'; // ✅ Import Chatbot
+import CasualWear from './components/Casualwear'; // ✅ Import Casual Wear
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signin" element={<Signin />} />
           <Route path="/addproducts" element={<Addproducts />} />
           <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/casualwear" element={<CasualWear />} /> {/* ✅ Add Casual Wear Route */}
         </Routes>
 
         <Footer />
