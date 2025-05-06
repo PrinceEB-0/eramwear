@@ -1,17 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import * as bootstrap from 'bootstrap'; // Import bootstrap module
 
 const ImageCarousel = () => {
   const carouselRef = useRef(null);
+  const [isMounted, setIsMounted] = useState(false); // Track mount status
 
   useEffect(() => {
-    // Initialize the Bootstrap carousel once the component has mounted
-    if (carouselRef.current) {
-      new bootstrap.Carousel(carouselRef.current);
-    }
+    // Wait for the component to mount fully
+    setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    // Initialize the Bootstrap carousel only if the component has mounted
+    if (isMounted && carouselRef.current) {
+      try {
+        new bootstrap.Carousel(carouselRef.current);
+      } catch (error) {
+        console.error("Error initializing carousel:", error);
+      }
+    }
+  }, [isMounted]); // Run this effect after the component is mounted
 
   return (
     <section className="row">
