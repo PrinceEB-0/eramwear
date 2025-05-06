@@ -21,3 +21,16 @@
     overflow-y: auto;
   }
   
+  /* Smooth transition for the chatbot */
+.chatbot-panel {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .chatbot-panel.open {
+    transform: translateY(0); /* Default position (visible) */
+  }
+  
+  .chatbot-panel.closed {
+    transform: translateY(100%); /* Hide chatbox (offscreen) */
+  }
+  

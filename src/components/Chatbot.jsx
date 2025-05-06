@@ -17,6 +17,7 @@ const Chatbot = () => {
     { text: "Hi, I’m your assistant. I can talk about Eram Wear, tech programs, and more! Type 'quit' to end the chat.", sender: 'bot' }
   ]);
   const [userInput, setUserInput] = useState("");
+  const [isOpen, setIsOpen] = useState(true); // State to manage visibility
 
   const handleInputChange = (e) => setUserInput(e.target.value);
 
@@ -42,28 +43,65 @@ const Chatbot = () => {
     setUserInput("");
   };
 
+  const toggleChatbot = () => setIsOpen(!isOpen); // Function to toggle visibility
+
   return (
     <div className="chatbot-container">
-      <div className="chatbot-header">
-        <h4>Chatbot</h4>
+      {/* Button to toggle chatbox visibility */}
+      <button
+        onClick={toggleChatbot}
+        className="chatbot-toggle-btn"
+        style={{
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          background: 'transparent',
+          border: 'none',
+          fontSize: '24px',
+          cursor: 'pointer',
+        }}
+      >
+        {isOpen ? 'X' : '+'} {/* "X" when open, "+" when closed */}
+      </button>
+
+      {/* Chatbot panel */}
+      <div
+        className={`chatbot-panel ${isOpen ? 'open' : 'closed'}`}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          width: '300px',
+          height: '400px',
+          backgroundColor: '#f8f9fa',
+          border: '1px solid #ddd',
+          borderRadius: '8px',
+          padding: '10px',
+          display: isOpen ? 'block' : 'none', // Toggle visibility based on state
+          transition: 'all 0.3s ease-in-out',
+        }}
+      >
+        <div className="chatbot-header">
+          <h4>Chatbot</h4>
+        </div>
+        <div className="chatbot-messages">
+          {messages.map((msg, index) => (
+            <div key={index} className={`message ${msg.sender}`}>
+              {msg.text}
+            </div>
+          ))}
+        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={userInput}
+            onChange={handleInputChange}
+            placeholder="Type your message..."
+            className="chatbot-input"
+          />
+          <button type="submit" className="chatbot-send-btn">Send</button>
+        </form>
       </div>
-      <div className="chatbot-messages">
-        {messages.map((msg, index) => (
-          <div key={index} className={`message ${msg.sender}`}>
-            {msg.text}
-          </div>
-        ))}
-      </div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={userInput}
-          onChange={handleInputChange}
-          placeholder="Type your message..."
-          className="chatbot-input"
-        />
-        <button type="submit" className="chatbot-send-btn">Send</button>
-      </form>
     </div>
   );
 };
