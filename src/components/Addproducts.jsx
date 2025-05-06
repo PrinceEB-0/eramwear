@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
 const Addproducts = () => {
   // Create hooks to store different data
   const [product_name, setProductName] = useState("");
@@ -7,37 +8,40 @@ const Addproducts = () => {
   const [product_cost, setProductCost] = useState("");
   const [product_photo, setProductPhoto] = useState("");
 
+  // Create 3 additional hooks to manage the state of your application when a person clicks the Add Product button
+  const [loading, setLoading] = useState("");
+  const [message, setMessage] = useState("");
 
-  //Create 3 additional hooks to manage the state of your application when a person clicks the Add Product button
-  const[loading, setLoading]= useState("");
-  const[message, setMessage]=useState("");
-  const[error, setError]=useState("");
+  // Create a function that will handle the submit event
+  const submit = async (e) => {
+    // Prevent the site from reloading
+    e.preventDefault();
 
-  //Create a function that will handle the submit event
-  const submit=async(e)=>{
-    //Prevent the site from reloading
-    e.preventDefault()
+    // Update the loading hook with a message
+    setLoading("Please wait as we update your product details......");
 
-    //Update the loading hook with a message.
-    setLoading("Please wait as we update your product details......")
+    // Create a form data variable that will hold all details from the hook
+    const data = new FormData();
 
-    //Create a form data variable that will hold all details from the hook.
-    const data=new FormData()
-
-    //Append the information from the hooks
+    // Append the information from the hooks
     data.append("product_name", product_name);
     data.append("product_description", product_description);
-    data.append("product_cost", product_cost)
-    data.append("product_photo", product_photo)
+    data.append("product_cost", product_cost);
+    data.append("product_photo", product_photo);
 
-    try{
-      const response= await axios.post("https://princeeb.pythonanywhere.com/api/addproduct", data);
+    try {
+      // Make the API call
+      const response = await axios.post("https://princeeb.pythonanywhere.com/api/addproduct", data);
 
-      //Set loading back to default
+      // Check if the response status is OK (200)
+      if (response.status === 200) {
+        setMessage("Product added successfully.");
+      } else {
+        setMessage("Failed to add product.");
+      }
+
+      // Set loading back to default
       setLoading("");
-
-      // Update your message hook with a message if the details have been saved successfully to the database.
-      setMessage("Product added successfully.");
 
       // Clear the data on the other four hooks
       setProductName("");
@@ -45,11 +49,12 @@ const Addproducts = () => {
       setProductCost("");
       setProductPhoto("");
 
+    } catch (error) {
+      // Handle error if the request fails
+      setLoading("");
+      setMessage("An error occurred while adding the product.");
     }
-
-    catch(error){
-    }
-  }
+  };
 
   return (
     <div className="row justify-content-center mt-4">
@@ -67,45 +72,44 @@ const Addproducts = () => {
             onChange={(e) => setProductName(e.target.value)}
             className="form-control"
             required
-          /> 
+          />
           <br />
           {product_name}
 
-          <textarea 
+          <textarea
             placeholder="Enter the description of the product"
             value={product_description}
             onChange={(e) => setProductDescription(e.target.value)}
             className="form-control"
             required
-          ></textarea> 
+          ></textarea>
           <br />
           {product_description}
 
-          <input 
+          <input
             type="number"
             placeholder="Enter the price"
             value={product_cost}
             onChange={(e) => setProductCost(e.target.value)}
             className="form-control"
-          /> 
+          />
           <br />
           {product_cost}
 
-          <label>Product Photo</label> 
+          <label>Product Photo</label>
           <br />
-          <input 
+          <input
             type="file"
             placeholder="Enter the photo URL"
             accept="image/*"
             onChange={(e) => setProductPhoto(e.target.files[0])}
             className="form-control"
             required
-          /> 
+          />
           <br />
-          {product_photo  && product_photo.name}
+          {product_photo && product_photo.name}
 
           <br />
-          
 
           <button type="submit" className="btn btn-danger">Add product</button>
         </form>
