@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import * as bootstrap from 'bootstrap'; // <--- Add this line
 
 const ImageCarousel = () => {
   useEffect(() => {
-    // Ensure the Bootstrap carousel is initialized after the component mounts
     const myCarousel = document.getElementById('mycarousel');
     if (myCarousel) {
-      new window.bootstrap.Carousel(myCarousel);
+      new bootstrap.Carousel(myCarousel); // <--- Use imported bootstrap
     }
   }, []);
+
 
   return (
     <section className="row">
