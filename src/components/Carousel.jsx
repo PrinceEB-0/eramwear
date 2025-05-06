@@ -4,7 +4,11 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const ImageCarousel = () => {
   useEffect(() => {
-    // Bootstrap behavior handled automatically via data attributes
+    // Ensure the Bootstrap carousel is initialized after the component mounts
+    const myCarousel = document.getElementById('mycarousel');
+    if (myCarousel) {
+      new window.bootstrap.Carousel(myCarousel);
+    }
   }, []);
 
   return (
@@ -77,6 +81,14 @@ const ImageCarousel = () => {
             <div className="carousel-item">
               <img
                 src="images/3677016.jpg"
+                alt="Scenic nature view with trees and sunlight"
+                className="d-block w-100"
+                height="300px"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src="images/10095398.jpg"
                 alt="Scenic nature view with trees and sunlight"
                 className="d-block w-100"
                 height="300px"
