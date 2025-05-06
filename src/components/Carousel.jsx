@@ -1,16 +1,18 @@
 import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import * as bootstrap from 'bootstrap'; // <--- Add this line
+import * as bootstrap from 'bootstrap'; // Import bootstrap module
 
 const ImageCarousel = () => {
   useEffect(() => {
-    const myCarousel = document.getElementById('mycarousel');
-    if (myCarousel) {
-      new bootstrap.Carousel(myCarousel); // <--- Use imported bootstrap
-    }
+    // Delay carousel initialization to ensure the DOM is fully rendered
+    setTimeout(() => {
+      const myCarousel = document.getElementById('mycarousel');
+      if (myCarousel) {
+        new bootstrap.Carousel(myCarousel);
+      }
+    }, 0); // Defer to the next event loop
   }, []);
-
 
   return (
     <section className="row">
