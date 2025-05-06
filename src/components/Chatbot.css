@@ -1,0 +1,23 @@
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    z-index: 999;
+  }
+  
+  .chatbot-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .chatbot-body {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
