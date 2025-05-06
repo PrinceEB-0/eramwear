@@ -1,17 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import * as bootstrap from 'bootstrap'; // Import bootstrap module
 
 const ImageCarousel = () => {
+  const carouselRef = useRef(null);
+
   useEffect(() => {
-    // Delay carousel initialization to ensure the DOM is fully rendered
-    setTimeout(() => {
-      const myCarousel = document.getElementById('mycarousel');
-      if (myCarousel) {
-        new bootstrap.Carousel(myCarousel);
-      }
-    }, 0); // Defer to the next event loop
+    // Initialize the Bootstrap carousel once the component has mounted
+    if (carouselRef.current) {
+      new bootstrap.Carousel(carouselRef.current);
+    }
   }, []);
 
   return (
@@ -19,6 +18,7 @@ const ImageCarousel = () => {
       <div className="col-md-1"></div>
       <div className="col-md-10">
         <div
+          ref={carouselRef}
           id="mycarousel"
           className="carousel slide whitish-gradient"
           data-bs-ride="carousel"
