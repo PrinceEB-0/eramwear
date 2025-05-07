@@ -38,16 +38,22 @@
 
 /* Navbar */
 .navbar {
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  font-weight: 400; /* Lighter weight */
+  letter-spacing: 0.3px; /* Reduced letter-spacing */
+  font-size: 0.9rem; /* Smaller font */
 }
+
 .navbar-brand {
-  font-size: 1.7rem;
+  font-size: 1.3rem; /* Reduced size */
   font-family: 'Playfair Display', serif;
 }
+
 .nav-link {
+  font-size: 0.9rem; /* Smaller font */
+  padding: 0.4rem 0.6rem; /* Reduced padding for neatness */
   transition: color 0.3s ease-in-out;
 }
+
 .nav-link:hover {
   color: #ffcc00 !important;
 }
