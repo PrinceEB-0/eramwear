@@ -17,7 +17,7 @@ const PartyAndNightOut = () => {
       <div className="row">
         <div className="col-md-4 mb-4">
           <div className="card shadow-sm border-0">
-            <img src="party.jpg" className="card-img-top" alt="Party Dress" />
+            <img src="/images/party.jpg" className="card-img-top" alt="Party Dress" />
             <div className="card-body">
               <h5 className="card-title">Elegant Party Dress</h5>
               <p className="card-text">A stunning dress perfect for any party or event. Available in various sizes and colors.</p>
@@ -27,7 +27,7 @@ const PartyAndNightOut = () => {
         </div>
         <div className="col-md-4 mb-4">
           <div className="card shadow-sm border-0">
-            <img src="suit,jpg" className="card-img-top" alt="Night Out Suit" />
+            <img src="/images/suit.jpg" className="card-img-top" alt="Night Out Suit" />
             <div className="card-body">
               <h5 className="card-title">Chic Night Out Suit</h5>
               <p className="card-text">A sharp and sophisticated suit for your night out. Comfortable and stylish for any event.</p>
@@ -37,7 +37,7 @@ const PartyAndNightOut = () => {
         </div>
         <div className="col-md-4 mb-4">
           <div className="card shadow-sm border-0">
-            <img src="top.jpg" className="card-img-top" alt="Sparkling Top" />
+            <img src="/images/top.jpg" className="card-img-top" alt="Sparkling Top" />
             <div className="card-body">
               <h5 className="card-title">Sparkling Party Top</h5>
               <p className="card-text">Shine bright with this sparkling top. Perfect for a night out dancing or a cocktail party.</p>
@@ -53,7 +53,7 @@ const PartyAndNightOut = () => {
         <div className="row">
           <div className="col-md-3 mb-3">
             <div className="card shadow-sm border-0">
-              <img src="dresses.jpg" className="card-img-top" alt="Dresses" />
+              <img src="/images/dresses.jpg" className="card-img-top" alt="Dresses" />
               <div className="card-body text-center">
                 <h5 className="card-title">Dresses</h5>
                 <Link to="/partyandnightout/dresses" className="btn btn-outline-dark">Explore</Link>
@@ -62,7 +62,7 @@ const PartyAndNightOut = () => {
           </div>
           <div className="col-md-3 mb-3">
             <div className="card shadow-sm border-0">
-              <img src="suits.jpg" className="card-img-top" alt="Suits" />
+              <img src="/images/suits.jpg" className="card-img-top" alt="Suits" />
               <div className="card-body text-center">
                 <h5 className="card-title">Suits</h5>
                 <Link to="/partyandnightout/suits" className="btn btn-outline-dark">Explore</Link>
@@ -71,7 +71,7 @@ const PartyAndNightOut = () => {
           </div>
           <div className="col-md-3 mb-3">
             <div className="card shadow-sm border-0">
-              <img src="tops" className="card-img-top" alt="Tops" />
+              <img src="/images/tops.jpg" className="card-img-top" alt="Tops" />
               <div className="card-body text-center">
                 <h5 className="card-title">Tops</h5>
                 <Link to="/partyandnightout/tops" className="btn btn-outline-dark">Explore</Link>
@@ -80,7 +80,7 @@ const PartyAndNightOut = () => {
           </div>
           <div className="col-md-3 mb-3">
             <div className="card shadow-sm border-0">
-              <img src="accesories.jpg" className="card-img-top" alt="Accessories" />
+              <img src="/images/accesories.jpg" className="card-img-top" alt="Accessories" />
               <div className="card-body text-center">
                 <h5 className="card-title">Accessories</h5>
                 <Link to="/partyandnightout/accessories" className="btn btn-outline-dark">Explore</Link>
