@@ -1,7 +1,5 @@
 import React from 'react';
-import officeWearImg from '../assets/officewear-banner.jpg'; // Add a banner image in your assets folder
 import ProductCard from './ProductCard'; // Optional reusable product card component
-import ProductCard from './ProductCard';
 
 const officeWearProducts = [
   {
@@ -39,7 +37,6 @@ const OfficeWear = () => {
     <div className="container py-5">
       {/* Hero Section */}
       <div className="mb-5">
-        <img src={officeWearImg} alt="Office Wear" className="img-fluid rounded shadow-sm" />
         <h2 className="mt-4 fw-bold">Office Wear Collection</h2>
         <p className="text-muted">
           Step into your workday with confidence and style. Our Office Wear selection is tailored to keep you looking sharp and professional — whether you're at a meeting, on a Zoom call, or running the boardroom.
