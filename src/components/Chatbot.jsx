@@ -39,7 +39,6 @@ const Chatbot = () => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
     synth.speak(utterance);
-
   };
 
   const handleSubmit = (e) => {
@@ -54,7 +53,7 @@ const Chatbot = () => {
       return;
     }
 
-    const botRespons = getBotResponse(userInput);
+    const botResponse = getBotResponse(userInput);  // Fixed botResponse here
     setMessages([...messages, { text: userInput, sender: 'user' }, { text: botResponse, sender: 'bot' }]);
     speak(botResponse);
     setUserInput("");
@@ -89,7 +88,7 @@ const Chatbot = () => {
     };
   };
 
-  const handleInputChange = (e) => setUserInput(e.target.value);  // <-- Add this function here
+  const handleInputChange = (e) => setUserInput(e.target.value);  // <-- Added this function
 
   useEffect(() => {
     const drag = dragRef.current;
@@ -128,7 +127,7 @@ const Chatbot = () => {
         <input
           type="text"
           value={userInput}
-          onChange={handleInputChange}  // <-- Here
+          onChange={handleInputChange}  // <-- Use the function here
           placeholder="Type your message..."
           className="chatbot-input"
         />
