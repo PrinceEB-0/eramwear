@@ -16,7 +16,7 @@ const Chatbot = () => {
 
   const chatbotPatterns = [
     { pattern: /hi|hello|hey/, responses: ["Hey there! 👋 What can I do for you today?", "Hello! 😊 Need a hand with something?", "Hi! Ready to dive into tech or fashion talk?"] },
-    { pattern: /how are you\??/, responses: ["I'm doing awesome, thanks for asking! How about you?", "All systems go! 💻 How are *you* doing today?", "I’m great! Always ready to help. What’s up?"] },
+    { pattern: /how are you\??/, responses: ["I'm doing awesome, thanks for asking! How about you?", "All systems go! 💻 How are *you* doing today?", "I’m great! Always ready help. What’s up?"] },
     { pattern: /.*your name.*/, responses: ["I'm your friendly assistant bot—call me whatever you like! 🤖", "They call me The Chatinator... but you can call me friend 😎"] },
     { pattern: /.*eram wear.*/, responses: ["Eram Wear is where fashion meets bold creativity. 👗 Want to explore our latest collections?", "At Eram Wear, we dress confidence. Ask about styles, prices, or what’s trending right now!"] },
     { pattern: /.*clothes.*|outfits|styles/, responses: ["We’ve got stylish outfits for all vibes—casual, streetwear, and chic. What’s your style?", "From trendy street fits to elegant designs, Eram Wear brings the heat 🔥. Looking for something specific?"] },
@@ -36,9 +36,10 @@ const Chatbot = () => {
 
   const speak = (text) => {
     if (!synth) return;
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = 'en-US';
-    synth.speak(utter);
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    synth.speak(utterance);
+
   };
 
   const handleSubmit = (e) => {
@@ -53,7 +54,7 @@ const Chatbot = () => {
       return;
     }
 
-    const botResponse = getBotResponse(userInput);
+    const botRespons = getBotResponse(userInput);
     setMessages([...messages, { text: userInput, sender: 'user' }, { text: botResponse, sender: 'bot' }]);
     speak(botResponse);
     setUserInput("");
@@ -87,6 +88,8 @@ const Chatbot = () => {
       setIsListening(false);
     };
   };
+
+  const handleInputChange = (e) => setUserInput(e.target.value);  // <-- Add this function here
 
   useEffect(() => {
     const drag = dragRef.current;
@@ -125,7 +128,7 @@ const Chatbot = () => {
         <input
           type="text"
           value={userInput}
-          onChange={handleInputChange}
+          onChange={handleInputChange}  // <-- Here
           placeholder="Type your message..."
           className="chatbot-input"
         />
