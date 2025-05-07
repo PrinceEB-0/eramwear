@@ -21,17 +21,56 @@
   }
 }
 
+/* Animations */
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Header Section */
 .App-header {
-  background-color: #282c34;
-  min-height: 5vh; /* Reduced height */
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 700% 700%;  /* Increased size to help with smooth transition */
+  animation: rainbowBackground 10s ease infinite, fadeSlideDown 1s ease-out, pulse 3s ease-in-out 1s infinite;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: calc(8px + 1vmin); /* Smaller font */
+  font-size: calc(8px + 1vmin);
   color: white;
-  padding: 10px; /* Reduced padding */
+  padding: 10px;
+}
+
+/* Keyframes for the rainbow background */
+@keyframes rainbowBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .card {
@@ -49,7 +88,6 @@
 .card-body .btn {
   margin-top: auto;
 }
-
 
 /* Navbar */
 .navbar {
