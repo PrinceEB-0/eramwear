@@ -2,10 +2,7 @@
 .App {
   text-align: start;
   font-family: 'Poppins', sans-serif;
-  background-image: url('/images/background.jpg');
-  background-size: cover; /* Ensures the image covers the entire background */
-  background-position: center center; /* Centers the image */
-  background-attachment: fixed; /* Makes the background fixed while scrolling */
+  background-color: #f9f9f9;
   color: #333;
   min-height: 100vh;
   display: flex;
