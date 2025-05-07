@@ -92,4 +92,20 @@
     color: white;
     border-radius: 5px;
   }
-  
+  .chatbot-voice-btn {
+    margin-left: 8px;
+    padding: 6px 10px;
+    background-color: #efefef;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .chatbot-voice-btn {
+    margin-left: 8px;
+    padding: 6px 10px;
+    background-color: #efefef;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+    
