@@ -48,8 +48,8 @@
 /* Header Section */
 .App-header {
   background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
-  background-size: 700% 700%;  /* Increased size to help with smooth transition */
-  animation: rainbowBackground 10s ease infinite, fadeSlideDown 1s ease-out, pulse 3s ease-in-out 1s infinite;
+  background-size: 1400% 1400%;
+  animation: rainbowBackground 6s ease infinite, fadeSlideDown 1s ease-out, pulse 3s ease-in-out 1s infinite;
   min-height: 5vh;
   display: flex;
   flex-direction: column;
@@ -60,25 +60,20 @@
   padding: 10px;
 }
 
-/* Keyframes for the rainbow background */
-@keyframes rainbowBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
+/* Card Hover Animation */
 .card {
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Body Styling */
 .card-body {
   flex-grow: 1;
   display: flex;
@@ -87,28 +82,23 @@
 
 .card-body .btn {
   margin-top: auto;
+  transition: background-color 0.3s ease;
 }
 
-/* Navbar */
-.navbar {
-  font-weight: 400; /* Lighter weight */
-  letter-spacing: 0.3px; /* Reduced letter-spacing */
-  font-size: 0.9rem; /* Smaller font */
+.card-body .btn:hover {
+  background-color: #e6b800;
 }
 
-.navbar-brand {
-  font-size: 1.3rem; /* Reduced size */
-  font-family: 'Playfair Display', serif;
-}
-
+/* Navbar Hover Animation */
 .nav-link {
-  font-size: 0.9rem; /* Smaller font */
-  padding: 0.4rem 0.6rem; /* Reduced padding for neatness */
-  transition: color 0.3s ease-in-out;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .nav-link:hover {
   color: #ffcc00 !important;
+  transform: scale(1.1);
 }
 
 /* Footer Background */
@@ -147,14 +137,15 @@ footer .bottom-footer {
 .social-pictures {
   width: 50px;
   height: 50px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease;
   margin: 0 10px;
   object-fit: cover;
-  border-radius: 50%; /* Round frame around images */
+  border-radius: 50%;
 }
 
 .social-pictures:hover {
   transform: scale(1.1);
+  opacity: 0.8;
 }
 
 /* Form Inputs */
@@ -178,11 +169,12 @@ button.btn-primary, input[type="submit"] {
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button.btn-primary:hover, input[type="submit"]:hover {
   background-color: #e6b800;
+  transform: translateY(-5px);
 }
 
 /* Responsive Layouts */
@@ -215,7 +207,7 @@ button.btn-primary:hover, input[type="submit"]:hover {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensures chatbot stays on top */
+  z-index: 1000;
 }
 
 .chatbot-container iframe {
@@ -228,6 +220,6 @@ button.btn-primary:hover, input[type="submit"]:hover {
 /* Gradient Section */
 .whitish-gradient {
   background: linear-gradient(135deg, #ffffff, #f2f2f2);
-  color: #333; /* Dark text for contrast */
+  color: #333;
   padding: 40px;
 }
