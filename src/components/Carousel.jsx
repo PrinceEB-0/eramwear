@@ -8,12 +8,10 @@ const ImageCarousel = () => {
   const [isMounted, setIsMounted] = useState(false); // Track mount status
 
   useEffect(() => {
-    // Wait for the component to mount fully
     setIsMounted(true);
   }, []);
 
   useEffect(() => {
-    // Initialize the Bootstrap carousel only if the component has mounted
     if (isMounted && carouselRef.current) {
       try {
         new bootstrap.Carousel(carouselRef.current);
@@ -21,7 +19,7 @@ const ImageCarousel = () => {
         console.error("Error initializing carousel:", error);
       }
     }
-  }, [isMounted]); // Run this effect after the component is mounted
+  }, [isMounted]);
 
   return (
     <section className="row">
@@ -37,32 +35,11 @@ const ImageCarousel = () => {
         >
           {/* Carousel indicators */}
           <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#mycarousel"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#mycarousel"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#mycarousel"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#mycarousel"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
+            <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
           </div>
 
           {/* Carousel slides */}
