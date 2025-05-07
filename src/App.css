@@ -24,15 +24,17 @@
 /* Header Section */
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 5vh; /* Reduced height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 1vmin); /* Smaller font */
   color: white;
-  padding: 20px;
+  padding: 10px; /* Reduced padding */
 }
+
+
 
 /* Navbar */
 .navbar {
