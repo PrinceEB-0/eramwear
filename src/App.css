@@ -2,7 +2,10 @@
 .App {
   text-align: start;
   font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
+  background-image: url('/images/background.jpg');
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center center; /* Centers the image */
+  background-attachment: fixed; /* Makes the background fixed while scrolling */
   color: #333;
   min-height: 100vh;
   display: flex;
@@ -48,8 +51,8 @@
 /* Header Section */
 .App-header {
   background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
-  background-size: 1400% 1400%;
-  animation: rainbowBackground 6s ease infinite, fadeSlideDown 1s ease-out, pulse 3s ease-in-out 1s infinite;
+  background-size: 400% 400%;
+  animation: rainbowBackground 8s ease infinite, fadeSlideDown 1s ease-out, pulse 3s ease-in-out 1s infinite;
   min-height: 5vh;
   display: flex;
   flex-direction: column;
@@ -58,6 +61,19 @@
   font-size: calc(8px + 1vmin);
   color: white;
   padding: 10px;
+}
+
+/* Rainbow animation */
+@keyframes rainbowBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Card Hover Animation */
