@@ -20,6 +20,7 @@ import Vintage from './components/Vintage';
 import Accessories from './components/Accessories'; // ✅ Added Accessories
 import NewArrivals from './components/NewArrivals'; // ✅ Added New Arrivals
 import FormalWear from './components/FormalWear'; // ✅ Import Formal Wear
+import FitnessApparel from './components/FitnessApparel';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/addproducts" element={<Addproducts />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/casualwear" element={<CasualWear />} />
+          <Route path="/fitnessapparel" element={<FitnessApparel />} />
           <Route path="/partyandnightout" element={<PartyAndNightOut />} />
           <Route path="/officewear" element={<OfficeWear />} />
           <Route path="/streetwear" element={<Streetwear />} />
