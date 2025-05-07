@@ -27,7 +27,7 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarcontents">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <Link to="/Casualwear" className="nav-link fw-semibold text-dark">
+              <Link to="/casualwear" className="nav-link fw-semibold text-dark">
                 Casual Wear
               </Link>
             </li>
@@ -37,12 +37,42 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/addproducts" className="nav-link fw-semibold text-dark">
+              <Link to="/partyandnightout" className="nav-link fw-semibold text-dark">
+                Party & Night Out
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/officewear" className="nav-link fw-semibold text-dark">
+                Office Wear
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/fitnessapparel" className="nav-link fw-semibold text-dark">
+                Fitness Apparel
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/streetwear" className="nav-link fw-semibold text-dark">
+                Streetwear
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/boho" className="nav-link fw-semibold text-dark">
+                Boho
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/vintage" className="nav-link fw-semibold text-dark">
+                Vintage
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/accessories" className="nav-link fw-semibold text-dark">
                 Accessories
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/addproducts" className="nav-link fw-semibold text-dark">
+              <Link to="/newarrivals" className="nav-link fw-semibold text-dark">
                 New Arrivals
               </Link>
             </li>
