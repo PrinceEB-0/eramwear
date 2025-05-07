@@ -22,7 +22,7 @@ const Aboutus = () => {
                 <li>Gael: Member</li>
                 <li>Jace: Member</li>
             </ul>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque dicta atque, voluptatum minima iste nulla animi excepturi laboriosam? Cum impedit exercitationem minus dolor velit itaque?</p>
+            <p>Eram Wear is more than just a fashion label — it is a lifestyle movement designed to empower, inspire, and redefine style for the modern era. Founded under the visionary leadership of Rahim B., Eram Wear stands at the intersection of cultural identity, global trends, and individual expression. We believe that fashion is not only about looking good but also about feeling confident, bold, and authentically yourself.</p>
  
 
             <h3 className='text-success'>Over 50+ services, over 1700+ customers served...</h3>
