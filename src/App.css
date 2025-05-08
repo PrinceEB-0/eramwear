@@ -236,3 +236,12 @@ button.btn-primary:hover, input[type="submit"]:hover {
   color: #333;
   padding: 40px;
 }
+
+/* Optional: add to your CSS file */
+.product_img {
+  height: 200px;
+  object-fit: contain;
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f9fa; /* light background to handle transparent images */
+}

@@ -80,20 +80,30 @@ const navigate=useNavigate();
 
       {filtered_products.map((product) => (
 
-        <div className="col-md-3 justify-content-center mb-4">
-        {/* below div will carry the card that contains a single product */}
-        <div className="card shadow">
-            <img src={img_url + product.product_photo} className="product_img mt-4" alt="" />
+      <div className="col-md-3 d-flex justify-content-center mb-4">
+      <div className="card shadow h-100 d-flex flex-column">
+        <img
+          src={img_url + product.product_photo}
+          className="product_img mt-4"
+          alt={product.product_name}
+        />
 
-            {/* below is the card body */}
-            <div className="card-body">
-              <h5 className='mt-2'>{product.product_name}</h5>
-              <p className='text-muted'>{product.product_description.slice(0, 50)}</p>
-              <b className='text-warning'>Kes {product.product_cost}</b> <br />
-              <button className='btn btn-primary' onClick={()=> navigate("mpesapayment", {state:{product}})}>Purchase now</button>
-            </div>
+        <div className="card-body d-flex flex-column">
+          <h5 className='mt-2'>{product.product_name}</h5>
+          <p className='text-muted'>
+            {product.product_description.slice(0, 50)}...
+          </p>
+          <b className='text-warning mb-2'>Kes {product.product_cost}</b>
+          <button
+            className='btn btn-primary mt-auto'
+            onClick={() => navigate("mpesapayment", { state: { product } })}
+          >
+            Purchase now
+          </button>
         </div>
-        </div>
+      </div>
+      </div>
+
       ))}
 
        
