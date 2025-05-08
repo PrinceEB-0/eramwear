@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'; // Import useNavigate
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -25,7 +25,7 @@ import FitnessApparel from './components/FitnessApparel';
 
 // Floating Chatbot Button Component
 const ChatbotButton = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // useNavigate hook for navigation
 
   const handleClick = () => {
     navigate("/chatbot");  // Navigate to the chatbot page
