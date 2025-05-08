@@ -7,7 +7,7 @@ import GetProducts from './components/Getproducts';
 import Footer from './components/Footer';
 import Signup from './components/Signup';
 import Addproducts from './components/Addproducts';
-import Makepayment from './components/Makepayment';
+import Makepayment from './components/Mpesapayment';
 import Signin from './components/Signin';
 import Aboutus from './components/Aboutus';
 import Chatbot from './components/Chatbot';
