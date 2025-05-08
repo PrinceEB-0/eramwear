@@ -23,6 +23,33 @@ import NewArrivals from './components/NewArrivals'; // ✅ Added New Arrivals
 import FormalWear from './components/FormalWear'; // ✅ Import Formal Wear
 import FitnessApparel from './components/FitnessApparel';
 
+// Floating Chatbot Button Component
+const ChatbotButton = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/chatbot");  // Navigate to the chatbot page
+  };
+
+  return (
+    <div 
+      onClick={handleClick}
+      style={{
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        backgroundColor: "#007bff",
+        padding: "15px",
+        borderRadius: "50%",
+        cursor: "pointer",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)"
+      }}
+    >
+      <span style={{ color: "white", fontSize: "24px" }}>💬</span> {/* Chat icon */}
+    </div>
+  );
+};
+
 function App() {
   return (
     <Router>
@@ -43,15 +70,18 @@ function App() {
           <Route path="/partyandnightout" element={<PartyAndNightOut />} />
           <Route path="/officewear" element={<OfficeWear />} />
           <Route path="/streetwear" element={<Streetwear />} />
-          <Route path="/formalwear" element={<FormalWear />} /> {/* ✅ Formal Wear Route */}
+          <Route path="/formalwear" element={<FormalWear />} />
           <Route path="/boho" element={<Boho />} />
           <Route path="/vintage" element={<Vintage />} />
-          <Route path="/accessories" element={<Accessories />} /> {/* ✅ Accessories Route */}
-          <Route path="/newarrivals" element={<NewArrivals />} /> {/* ✅ New Arrivals Route */}
+          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/newarrivals" element={<NewArrivals />} />
+          <Route path="/chatbot" element={<Chatbot />} /> {/* Add route for chatbot */}
         </Routes>
 
         <Footer />
-        <Chatbot />
+
+        {/* Floating chatbot button */}
+        <ChatbotButton />
       </div>
     </Router>
   );

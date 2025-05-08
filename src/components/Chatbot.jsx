@@ -118,10 +118,12 @@ const Chatbot = () => {
       <div className="chatbot-header">
         <h4>Chatbot</h4>
       </div>
-      <div className="chatbot-messages">
-        {messages.map((msg, index) => (
-          <div key={index} className={`message ${msg.sender}`}>{msg.text}</div>
-        ))}
+      <div className="chatbot-body">
+        <div className="chatbot-messages">
+          {messages.map((msg, index) => (
+            <div key={index} className={`message ${msg.sender}`}>{msg.text}</div>
+          ))}
+        </div>
       </div>
       <form onSubmit={handleSubmit}>
         <input
