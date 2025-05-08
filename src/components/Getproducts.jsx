@@ -62,7 +62,7 @@ const navigate=useNavigate();
 
       <Navbar/>
       <ImageCarousel/>
-      <h3 className="text-info mt-3">Available Products</h3>
+      <h3 className="text-info mt-3 text-center">Available Products</h3>
       <div className="row justify-content-center mt-3 mb-3">
         <input
           className="form-control w-50"
