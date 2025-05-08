@@ -47,18 +47,26 @@
 
 /* Header Section */
 .App-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 400% 400%;
   animation: rainbowBackground 8s ease infinite, fadeSlideDown 1s ease-out, pulse 3s ease-in-out 1s infinite;
-  min-height: 5vh;
+
+  min-height: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: calc(8px + 1vmin);
+
+  font-size: 12px;
   color: white;
-  padding: 10px;
+  padding: 4px 8px;
 }
+
+
 
 /* Rainbow animation */
 @keyframes rainbowBackground {
