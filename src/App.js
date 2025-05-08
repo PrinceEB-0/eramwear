@@ -7,7 +7,7 @@ import GetProducts from './components/Getproducts';
 import Footer from './components/Footer';
 import Signup from './components/Signup';
 import Addproducts from './components/Addproducts';
-import Makepayment from './components/Mpesapayment';
+import Mpesapayment from './components/Mpesapayment';
 import Signin from './components/Signin';
 import Aboutus from './components/Aboutus';
 import Chatbot from './components/Chatbot';
@@ -63,7 +63,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/addproducts" element={<Addproducts />} />
-          <Route path="/makepayment" element={<Makepayment />} />
+          <Route path="/mpesapayment" element={<Mpesapayment />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/casualwear" element={<CasualWear />} />
           <Route path="/fitnessapparel" element={<FitnessApparel />} />

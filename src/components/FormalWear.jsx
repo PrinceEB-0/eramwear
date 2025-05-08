@@ -1,6 +1,8 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const FormalWear = () => {
+  <Navbar/>
   return (
     <div className="container py-5">
       <h2 className="mb-4 text-center fw-bold">Formal Wear</h2>

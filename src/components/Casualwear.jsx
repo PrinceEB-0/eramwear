@@ -1,8 +1,10 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const CasualWear = () => {
   return (
     <div>
+      <Navbar/>
       <h2>Casual Wear Collection: Effortless Style for Every Day 👕👟</h2>
       <p>
         At <strong>Eram Wear</strong>, we believe that style should be effortless, comfortable, and versatile. Our

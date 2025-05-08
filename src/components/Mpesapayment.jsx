@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Makepayment = () => {
     // We passed the state of our card from the component getproducts component
@@ -45,6 +46,7 @@ const Makepayment = () => {
 
   return (
     <div className='row justify-content-center mt-3'>
+        <Navbar/>
         <h1 className='text-danger'>Lipa na Mpesa</h1>
         <div className="col-md-6 card shadow p-3">
 
