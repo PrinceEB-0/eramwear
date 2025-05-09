@@ -161,6 +161,64 @@ footer .bottom-footer {
   color: #bdbdbd;
 }
 
+.footer-modern {
+  background: linear-gradient(135deg, #34495e, #2c3e50); /* Darker gradient */
+  color: #fff;
+  padding: 25px 0; /* Reduced padding for an even smaller footer */
+}
+
+.footer-modern input,
+.footer-modern textarea {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.footer-modern h5 {
+  font-weight: 600;
+  color: #ffcc00;
+  font-size: 1rem; /* Slightly smaller font size for a more compact look */
+}
+
+.footer-socials img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.footer-socials img:hover {
+  transform: scale(1.1);
+}
+
+.bottom-footer h6 {
+  color: #bdbdbd; /* Lighter footer text color */
+  font-size: 0.85rem; /* Reduced font size for the footer note */
+}
+
+/* Make the footer even smaller on mobile */
+@media (max-width: 768px) {
+  .footer-modern {
+    padding: 20px 0; /* Further reduced padding on smaller screens */
+  }
+
+  .footer-modern h5 {
+    font-size: 0.9rem; /* Even smaller font size on mobile */
+  }
+
+  .footer-socials img {
+    width: 30px;
+    height: 30px; /* Smaller social icons */
+  }
+
+  .bottom-footer h6 {
+  color: #bdbdbd; /* Light footer text color */
+  font-size: 0.7rem; /* Reduced font size for the "Developed by Prince" text */
+}
+}
+
+
+
 /* Social Icons */
 .social-pictures {
   width: 50px;
