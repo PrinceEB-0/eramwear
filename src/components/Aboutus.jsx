@@ -1,4 +1,4 @@
-import Footer from './Footer';
+
 import Navbar from './Navbar';
 
 const Aboutus = () => {
@@ -41,8 +41,8 @@ const Aboutus = () => {
 
         </div>
 
-        {/* Footer */}
-        <Footer />
+        
+        
       </div>
     </>
   );
