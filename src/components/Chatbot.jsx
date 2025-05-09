@@ -11,7 +11,7 @@ const Chatbot = () => {
   ]);
   const [userInput, setUserInput] = useState("");
   const [isListening, setIsListening] = useState(false);
-  const dragRef = useRef(null);
+  const dragRef = useRef(null);  // Reference for the chatbot container
   const pos = useRef({ x: 0, y: 0, offsetX: 0, offsetY: 0 });
 
   const chatbotPatterns = [
@@ -53,7 +53,7 @@ const Chatbot = () => {
       return;
     }
 
-    const botResponse = getBotResponse(userInput);  // Fixed botResponse here
+    const botResponse = getBotResponse(userInput);
     setMessages([...messages, { text: userInput, sender: 'user' }, { text: botResponse, sender: 'bot' }]);
     speak(botResponse);
     setUserInput("");
@@ -88,30 +88,36 @@ const Chatbot = () => {
     };
   };
 
-  const handleInputChange = (e) => setUserInput(e.target.value);  // <-- Added this function
+  const handleInputChange = (e) => setUserInput(e.target.value);
 
   useEffect(() => {
     const drag = dragRef.current;
-    const onMouseDown = (e) => {
-      pos.current.offsetX = e.clientX - drag.offsetLeft;
-      pos.current.offsetY = e.clientY - drag.offsetTop;
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseup', onMouseUp);
-    };
 
-    const onMouseMove = (e) => {
-      drag.style.left = `${e.clientX - pos.current.offsetX}px`;
-      drag.style.top = `${e.clientY - pos.current.offsetY}px`;
-    };
+    // Check if the element exists before trying to access it
+    if (drag) {
+      const onMouseDown = (e) => {
+        pos.current.offsetX = e.clientX - drag.offsetLeft;
+        pos.current.offsetY = e.clientY - drag.offsetTop;
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+      };
 
-    const onMouseUp = () => {
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseup', onMouseUp);
-    };
+      const onMouseMove = (e) => {
+        drag.style.left = `${e.clientX - pos.current.offsetX}px`;
+        drag.style.top = `${e.clientY - pos.current.offsetY}px`;
+      };
 
-    drag.addEventListener('mousedown', onMouseDown);
-    return () => drag.removeEventListener('mousedown', onMouseDown);
-  }, []);
+      const onMouseUp = () => {
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+      };
+
+      drag.addEventListener('mousedown', onMouseDown);
+      
+      // Clean up event listeners when the component unmounts
+      return () => drag.removeEventListener('mousedown', onMouseDown);
+    }
+  }, []);  // Empty dependency array to run only once after the first render
 
   return (
     <div className="chatbot-container draggable" ref={dragRef}>
@@ -129,7 +135,7 @@ const Chatbot = () => {
         <input
           type="text"
           value={userInput}
-          onChange={handleInputChange}  // <-- Use the function here
+          onChange={handleInputChange}
           placeholder="Type your message..."
           className="chatbot-input"
         />

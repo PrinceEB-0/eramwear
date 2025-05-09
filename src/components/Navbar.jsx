@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-md bg-white shadow-sm py-3 px-4 border-bottom sticky-top">
+    <nav className="navbar navbar-expand-md bg-white shadow-sm py-1 px-3 border-bottom sticky-top">
       <div className="container-fluid">
 
         {/* Brand Logo */}
-        <Link to="/" className="navbar-brand fs-4 fw-bold text-dark">
+        <Link to="/" className="navbar-brand fs-5 fw-bold text-dark">
           Eram<span className="text-danger">Wear</span>
         </Link>
 
@@ -25,7 +25,7 @@ const Navbar = () => {
 
         {/* Collapsible Menu */}
         <div className="collapse navbar-collapse" id="navbarcontents">
-          <ul className="navbar-nav me-auto mb-2 mb-md-0">
+          <ul className="navbar-nav me-auto mb-2 mb-md-0 small">
             <li className="nav-item">
               <Link to="/casualwear" className="nav-link fw-semibold text-dark">
                 Casual Wear
@@ -78,19 +78,19 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <ul className="navbar-nav ms-auto align-items-center">
+          <ul className="navbar-nav ms-auto align-items-center small">
             <li className="nav-item me-2">
               <Link to="/aboutus" className="nav-link text-dark fw-semibold">
                 About Us
               </Link>
             </li>
             <li className="nav-item me-2">
-              <Link to="/signin" className="btn btn-outline-dark px-3">
+              <Link to="/signin" className="btn btn-outline-dark px-2 py-1">
                 Sign In
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/signup" className="btn btn-danger px-3">
+              <Link to="/signup" className="btn btn-danger px-2 py-1">
                 Sign Up
               </Link>
             </li>

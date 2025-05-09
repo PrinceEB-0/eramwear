@@ -44,34 +44,43 @@ const Makepayment = () => {
     // console.log(product.product_photo)
 
 
-  return (
-    <div className='row justify-content-center mt-3'>
-        <Navbar/>
-        <h1 className='text-danger'>Lipa na Mpesa</h1>
-        <div className="col-md-6 card shadow p-3">
-
-            <b className='text-success'>{message}</b>
-
-        <h4>Product Name: <span className='text-primary'>{product.product_name}</span></h4>
-        <form onSubmit={submit}>
-           
-            <h4>Price of the Product: <span className='text-primary'>{product.product_cost}</span></h4>
-            <input
-            type="number"
-            placeholder='Enter your mpesa number'
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className='form-control' />
-            <br />
-            <br />
-            {/* {phone} */}
-
-            <button className='btn btn-success'>Make Payment</button>
-        </form>
-        </div>
-   
+return (
+  <div className='container mt-5'>
+    <Navbar />
+    <div className='text-center mb-4'>
+      <h1 className='text-dark fw-bold'>Lipa na Mpesa</h1>
+      {message && <p className='text-success fw-medium'>{message}</p>}
     </div>
-  )
+    
+    <div className="row justify-content-center">
+      <div className="col-md-6">
+        <div className="card shadow-lg p-4 rounded-4">
+          <h5 className="mb-3">
+            Product Name: <span className='text-primary'>{product.product_name}</span>
+          </h5>
+          <h5 className="mb-4">
+            Price: <span className='text-primary'>KES {product.product_cost}</span>
+          </h5>
+
+          <form onSubmit={submit}>
+            <label className="form-label">Mpesa Number</label>
+            <input
+              type="number"
+              placeholder='Enter your Mpesa number'
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className='form-control mb-4'
+            />
+            <div className="d-grid">
+              <button className='btn btn-success btn-lg rounded-pill'>Make Payment</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 }
 
 export default Makepayment;

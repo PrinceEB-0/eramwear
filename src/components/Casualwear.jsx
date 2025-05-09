@@ -27,26 +27,30 @@ const products = [
 
 const CasualWear = () => {
   return (
-    <div>
+    <>
       <Navbar />
-      <h2>Casual Wear Collection: Effortless Style for Every Day 👕👟</h2>
-      <p>
-        At <strong>Eram Wear</strong>, we believe that style should be effortless.
-      </p>
+      <div className="container my-5">
+        <h2 className="text-center mb-4">Casual Wear Collection: Effortless Style for Every Day 👕👟</h2>
+        <p className="text-center text-muted mb-5">
+          At <strong>Eram Wear</strong>, we believe that style should be effortless.
+        </p>
 
-      {/* Existing content here */}
-
-      <h3>Featured Items:</h3>
-      <div className="card-grid">
-        {products.map((product, index) => (
-          <div className="product-card" key={index}>
-            <img src={product.image} alt={product.name} />
-            <h4>{product.name}</h4>
-            <p>{product.desc}</p>
-          </div>
-        ))}
+        <h3 className="mb-4">Featured Items:</h3>
+        <div className="row">
+          {products.map((product, index) => (
+            <div className="col-md-3 mb-4" key={index}>
+              <div className="card h-100 shadow-sm">
+                <img src={product.image} className="card-img-top" alt={product.name} />
+                <div className="card-body">
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text">{product.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const officeWearProducts = [
   {
@@ -33,34 +34,37 @@ const officeWearProducts = [
 
 const OfficeWear = () => {
   return (
-    <div className="container py-5">
-      {/* Hero Section */}
-      <div className="mb-5">
-        <h2 className="mt-4 fw-bold">Office Wear Collection</h2>
-        <p className="text-muted">
-          Step into your workday with confidence and style. Our Office Wear selection is tailored to keep you looking sharp and professional — whether you're at a meeting, on a Zoom call, or running the boardroom.
-        </p>
-      </div>
+    <>
+      <Navbar />
+      <div className="container py-5">
+        {/* Hero Section */}
+        <div className="mb-5">
+          <h2 className="mt-4 fw-bold">Office Wear Collection</h2>
+          <p className="text-muted">
+            Step into your workday with confidence and style. Our Office Wear selection is tailored to keep you looking sharp and professional — whether you're at a meeting, on a Zoom call, or running the boardroom.
+          </p>
+        </div>
 
-      {/* Product Grid */}
-      <div className="row">
-        {officeWearProducts.map(product => (
-          <div key={product.id} className="col-md-6 col-lg-4 mb-4">
-            <div className="card h-100 shadow-sm">
-              <img src={product.image} className="card-img-top" alt={product.name} />
-              <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text text-muted">{product.description}</p>
-                <div className="mt-auto">
-                  <p className="fw-bold">{product.price}</p>
-                  <button className="btn btn-dark w-100">Add to Cart</button>
+        {/* Product Grid */}
+        <div className="row">
+          {officeWearProducts.map(product => (
+            <div key={product.id} className="col-md-6 col-lg-4 mb-4">
+              <div className="card h-100 shadow-sm">
+                <img src={product.image} className="card-img-top" alt={product.name} />
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text text-muted">{product.description}</p>
+                  <div className="mt-auto">
+                    <p className="fw-bold">{product.price}</p>
+                    <button className="btn btn-dark w-100">Add to Cart</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
