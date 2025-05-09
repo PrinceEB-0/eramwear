@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Navbar from './Navbar';  // Import the Navbar component
+import {useNavigate } from "react-router-dom";
+import Navbar from './Navbar';
 
 const PartyAndNightOut = () => {
+  const navigate = useNavigate();
+
+  const handleShopNow = (product) => {
+    navigate("/mpesapayment", { state: { product } });
+  };
+
   return (
     <div>
-      <Navbar /> {/* Add Navbar here */}
+      <Navbar />
       <div className="container py-5">
-        {/* Section Title */}
         <div className="text-center mb-4">
           <h1 className="fw-bold text-dark">Party & Night Out</h1>
           <p className="lead text-muted">
@@ -15,7 +20,6 @@ const PartyAndNightOut = () => {
           </p>
         </div>
 
-        {/* Featured Products Section */}
         <div className="row">
           <div className="col-md-4 mb-4">
             <div className="card h-100 d-flex flex-column shadow-sm border-0">
@@ -23,7 +27,19 @@ const PartyAndNightOut = () => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">Elegant Party Dress</h5>
                 <p className="card-text">A stunning dress perfect for any party or event. Available in various sizes and colors.</p>
-                <Link to="/mpesapayment" className="btn btn-danger mt-auto">Shop Now</Link>
+                <button
+                  className="btn btn-danger mt-auto"
+                  onClick={() =>
+                    handleShopNow({
+                      product_name: "Elegant Party Dress",
+                      product_description: "A stunning dress perfect for any party or event. Available in various sizes and colors.",
+                      product_cost: 3000,
+                      product_photo: "/images/party.jpg",
+                    })
+                  }
+                >
+                  Shop Now
+                </button>
               </div>
             </div>
           </div>
@@ -33,7 +49,19 @@ const PartyAndNightOut = () => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">Chic Night Out Suit</h5>
                 <p className="card-text">A sharp and sophisticated suit for your night out. Comfortable and stylish for any event.</p>
-                <Link to="/mpesapayment" className="btn btn-danger mt-auto">Shop Now</Link>
+                <button
+                  className="btn btn-danger mt-auto"
+                  onClick={() =>
+                    handleShopNow({
+                      product_name: "Chic Night Out Suit",
+                      product_description: "A sharp and sophisticated suit for your night out. Comfortable and stylish for any event.",
+                      product_cost: 5000,
+                      product_photo: "/images/suit.jpg",
+                    })
+                  }
+                >
+                  Shop Now
+                </button>
               </div>
             </div>
           </div>
@@ -43,13 +71,24 @@ const PartyAndNightOut = () => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">Sparkling Party Top</h5>
                 <p className="card-text">Shine bright with this sparkling top. Perfect for a night out dancing or a cocktail party.</p>
-                <Link to="/mpesapayment" className="btn btn-danger mt-auto">Shop Now</Link>
+                <button
+                  className="btn btn-danger mt-auto"
+                  onClick={() =>
+                    handleShopNow({
+                      product_name: "Sparkling Party Top",
+                      product_description: "Shine bright with this sparkling top. Perfect for a night out dancing or a cocktail party.",
+                      product_cost: 2500,
+                      product_photo: "/images/top.jpg",
+                    })
+                  }
+                >
+                  Shop Now
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Popular Categories */}
         <div className="mt-5">
           <h2 className="fw-bold text-dark">Popular Categories</h2>
           <div className="row">
@@ -92,7 +131,6 @@ const PartyAndNightOut = () => {
           </div>
         </div>
 
-        {/* Styling Tips Section */}
         <div className="mt-5">
           <h2 className="fw-bold text-dark">Styling Tips for Your Night Out</h2>
           <p className="lead text-muted">

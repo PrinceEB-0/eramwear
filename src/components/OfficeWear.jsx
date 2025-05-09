@@ -1,38 +1,46 @@
-import React from 'react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from './Navbar';
 
-const officeWearProducts = [
-  {
-    id: 1,
-    name: "Tailored Blazer",
-    price: "KES 4,500",
-    image: "/images/blazer.jpg",
-    description: "Perfectly structured for a sleek, professional look.",
-  },
-  {
-    id: 2,
-    name: "Pencil Skirt",
-    price: "KES 2,800",
-    image: "/images/pencilskirt.jpg",
-    description: "Elegant and comfortable, ideal for office settings.",
-  },
-  {
-    id: 3,
-    name: "Men’s Formal Shirt",
-    price: "KES 3,200",
-    image: "/images/formalshirt.jpg",
-    description: "Classic button-up with a modern fit.",
-  },
-  {
-    id: 4,
-    name: "Women’s Trousers",
-    price: "KES 3,000",
-    image: "/images/trousers.jpg",
-    description: "Tailored and versatile office trousers.",
-  }
-];
-
 const OfficeWear = () => {
+  const navigate = useNavigate();
+
+  // Define the officeWearProducts array here
+  const officeWearProducts = [
+    {
+      id: 1,
+      name: "Tailored Blazer",
+      price: "KES 4,500",
+      image: "/images/blazer.jpg",
+      description: "Perfectly structured for a sleek, professional look.",
+    },
+    {
+      id: 2,
+      name: "Pencil Skirt",
+      price: "KES 2,800",
+      image: "/images/pencilskirt.jpg",
+      description: "Elegant and comfortable, ideal for office settings.",
+    },
+    {
+      id: 3,
+      name: "Men’s Formal Shirt",
+      price: "KES 3,200",
+      image: "/images/formalshirt.jpg",
+      description: "Classic button-up with a modern fit.",
+    },
+    {
+      id: 4,
+      name: "Women’s Trousers",
+      price: "KES 3,000",
+      image: "/images/trousers.jpg",
+      description: "Tailored and versatile office trousers.",
+    }
+  ];
+
+  const handlePurchaseNow = (product) => {
+    navigate("/mpesapayment", { state: { product } });
+  };
+
   return (
     <>
       <Navbar />
@@ -47,7 +55,7 @@ const OfficeWear = () => {
 
         {/* Product Grid */}
         <div className="row">
-          {officeWearProducts.map(product => (
+          {officeWearProducts.map((product) => (
             <div key={product.id} className="col-md-6 col-lg-4 mb-4">
               <div className="card h-100 shadow-sm">
                 <img src={product.image} className="card-img-top" alt={product.name} />
@@ -56,7 +64,19 @@ const OfficeWear = () => {
                   <p className="card-text text-muted">{product.description}</p>
                   <div className="mt-auto">
                     <p className="fw-bold">{product.price}</p>
-                    <button className="btn btn-dark w-100">Add to Cart</button>
+                    <button
+                      className="btn btn-dark w-100"
+                      onClick={() =>
+                        handlePurchaseNow({
+                          product_name: product.name,
+                          product_description: product.description,
+                          product_cost: product.price,
+                          product_photo: product.image,
+                        })
+                      }
+                    >
+                      Purchase Now
+                    </button>
                   </div>
                 </div>
               </div>

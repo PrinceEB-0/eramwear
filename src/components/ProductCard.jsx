@@ -9,7 +9,7 @@ const ProductCard = ({ image, name, description, price }) => {
         <p className="card-text">{description}</p>
         <div className="mt-auto">
           <p className="fw-bold text-primary">{price}</p>
-          <button className="btn btn-dark w-100">Add to Cart</button>
+          <button className="btn btn-dark w-100">Purchase Now</button>
         </div>
       </div>
     </div>
