@@ -23,7 +23,7 @@ const PartyAndNightOut = () => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">Elegant Party Dress</h5>
                 <p className="card-text">A stunning dress perfect for any party or event. Available in various sizes and colors.</p>
-                <Link to="/productdetails/1" className="btn btn-danger mt-auto">Shop Now</Link>
+                <Link to="/mpesapayment" className="btn btn-danger mt-auto">Shop Now</Link>
               </div>
             </div>
           </div>
@@ -33,7 +33,7 @@ const PartyAndNightOut = () => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">Chic Night Out Suit</h5>
                 <p className="card-text">A sharp and sophisticated suit for your night out. Comfortable and stylish for any event.</p>
-                <Link to="/productdetails/2" className="btn btn-danger mt-auto">Shop Now</Link>
+                <Link to="/mpesapayment" className="btn btn-danger mt-auto">Shop Now</Link>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ const PartyAndNightOut = () => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title">Sparkling Party Top</h5>
                 <p className="card-text">Shine bright with this sparkling top. Perfect for a night out dancing or a cocktail party.</p>
-                <Link to="/productdetails/3" className="btn btn-danger mt-auto">Shop Now</Link>
+                <Link to="/mpesapayment" className="btn btn-danger mt-auto">Shop Now</Link>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ const PartyAndNightOut = () => {
                 <img src="/images/dresses.jpg" className="card-img-top" alt="Dresses" />
                 <div className="card-body d-flex flex-column text-center">
                   <h5 className="card-title">Dresses</h5>
-                  <Link to="/partyandnightout/dresses" className="btn btn-outline-dark mt-auto">Explore</Link>
+                  <a href="https://vogue.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark mt-auto">Explore</a>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@ const PartyAndNightOut = () => {
                 <img src="/images/suits.jpg" className="card-img-top" alt="Suits" />
                 <div className="card-body d-flex flex-column text-center">
                   <h5 className="card-title">Suits</h5>
-                  <Link to="/partyandnightout/suits" className="btn btn-outline-dark mt-auto">Explore</Link>
+                  <a href="https://vogue.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark mt-auto">Explore</a>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ const PartyAndNightOut = () => {
                 <img src="/images/tops.jpg" className="card-img-top" alt="Tops" />
                 <div className="card-body d-flex flex-column text-center">
                   <h5 className="card-title">Tops</h5>
-                  <Link to="/partyandnightout/tops" className="btn btn-outline-dark mt-auto">Explore</Link>
+                  <a href="https://vogue.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark mt-auto">Explore</a>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ const PartyAndNightOut = () => {
                 <img src="/images/accesories.jpg" className="card-img-top" alt="Accessories" />
                 <div className="card-body d-flex flex-column text-center">
                   <h5 className="card-title">Accessories</h5>
-                  <Link to="/partyandnightout/accessories" className="btn btn-outline-dark mt-auto">Explore</Link>
+                  <a href="https://vogue.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline-dark mt-auto">Explore</a>
                 </div>
               </div>
             </div>
