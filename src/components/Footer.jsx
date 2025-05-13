@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="footer-modern text-light">
@@ -12,6 +14,8 @@ const Footer = () => {
             <p>
               Our collection features trendy, versatile apparel designed to enhance your style effortlessly. 👗
             </p>
+            {/* Add Products Button */}
+            <Link to="/addproducts" className="btn btn-success w-100">Add Products</Link>
           </div>
 
           {/* Contact Form */}
@@ -22,7 +26,6 @@ const Footer = () => {
             <textarea className="form-control mb-2" rows="4" placeholder="Leave a comment"></textarea>
             <input type="submit" value="Send Message ✉️" className="btn btn-primary w-100" />
           </div>
-
 
           {/* Social & Brand */}
           <div className="col-md-4 mb-3">

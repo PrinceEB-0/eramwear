@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar'; // Import the Navbar component
 
 const Addproducts = () => {
   // Create hooks to store different data
@@ -57,62 +58,67 @@ const Addproducts = () => {
   };
 
   return (
-    <div className="row justify-content-center mt-4">
-      <div className="col-md-6 card shadow p-4">
-        <form onSubmit={submit}>
-          <h2>Add Product</h2>
+    <div>
+      {/* Add Navbar at the top of the page */}
+      <Navbar />
 
-          {loading}
-          {message}
+      <div className="row justify-content-center mt-4">
+        <div className="col-md-6 card shadow p-4">
+          <form onSubmit={submit}>
+            <h2>Add Product</h2>
 
-          <input
-            type="text"
-            placeholder="Enter the product name here"
-            value={product_name}
-            onChange={(e) => setProductName(e.target.value)}
-            className="form-control"
-            required
-          />
-          <br />
-          {product_name}
+            {loading}
+            {message}
 
-          <textarea
-            placeholder="Enter the description of the product"
-            value={product_description}
-            onChange={(e) => setProductDescription(e.target.value)}
-            className="form-control"
-            required
-          ></textarea>
-          <br />
-          {product_description}
+            <input
+              type="text"
+              placeholder="Enter the product name here"
+              value={product_name}
+              onChange={(e) => setProductName(e.target.value)}
+              className="form-control"
+              required
+            />
+            <br />
+            {product_name}
 
-          <input
-            type="number"
-            placeholder="Enter the price"
-            value={product_cost}
-            onChange={(e) => setProductCost(e.target.value)}
-            className="form-control"
-          />
-          <br />
-          {product_cost}
+            <textarea
+              placeholder="Enter the description of the product"
+              value={product_description}
+              onChange={(e) => setProductDescription(e.target.value)}
+              className="form-control"
+              required
+            ></textarea>
+            <br />
+            {product_description}
 
-          <label>Product Photo</label>
-          <br />
-          <input
-            type="file"
-            placeholder="Enter the photo URL"
-            accept="image/*"
-            onChange={(e) => setProductPhoto(e.target.files[0])}
-            className="form-control"
-            required
-          />
-          <br />
-          {product_photo && product_photo.name}
+            <input
+              type="number"
+              placeholder="Enter the price"
+              value={product_cost}
+              onChange={(e) => setProductCost(e.target.value)}
+              className="form-control"
+            />
+            <br />
+            {product_cost}
 
-          <br />
+            <label>Product Photo</label>
+            <br />
+            <input
+              type="file"
+              placeholder="Enter the photo URL"
+              accept="image/*"
+              onChange={(e) => setProductPhoto(e.target.files[0])}
+              className="form-control"
+              required
+            />
+            <br />
+            {product_photo && product_photo.name}
 
-          <button type="submit" className="btn btn-danger">Add product</button>
-        </form>
+            <br />
+
+            <button type="submit" className="btn btn-danger">Add product</button>
+          </form>
+        </div>
       </div>
     </div>
   );
