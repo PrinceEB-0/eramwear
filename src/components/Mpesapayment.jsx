@@ -31,7 +31,8 @@ const Makepayment = () => {
         data.append("amount", product.product_cost);
 
         // use axios to access the http method post
-        const response = await axios.post("https://princeeb.pythonanywhere.com/api/make_payment", data)
+        const response = await axios.post("https://princeeb.pythonanywhere.com/api/mpesa_payment", data)
+
 
         // update the message hook with a new message
         setMessage(response.data.message)
