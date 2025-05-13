@@ -36,7 +36,7 @@ const Aboutus = () => {
               also about feeling confident, bold, and authentically yourself.
             </p>
 
-            <h3 className="text-success mt-4">Over 50+ services, over 1700+ customers served...</h3>
+            
           </div>
 
         </div>
