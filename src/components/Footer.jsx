@@ -17,10 +17,12 @@ const Footer = () => {
           {/* Contact Form */}
           <div className="col-md-4 mb-3">
             <h5 className="text-info mb-2">Reach Us Out 📬</h5>
+            <p><strong>Call or WhatsApp:</strong> <a href="tel:0741913061" className="text-light">0741913061</a></p>
             <input className="form-control mb-2" type="email" placeholder="Enter your email" />
             <textarea className="form-control mb-2" rows="4" placeholder="Leave a comment"></textarea>
             <input type="submit" value="Send Message ✉️" className="btn btn-primary w-100" />
           </div>
+
 
           {/* Social & Brand */}
           <div className="col-md-4 mb-3">
